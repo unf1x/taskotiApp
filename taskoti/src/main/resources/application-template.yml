@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:****/dbName"
+    username: "myUsername"
+    password: "myPassword"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
