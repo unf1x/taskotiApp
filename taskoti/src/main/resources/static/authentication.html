@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8"> <!-- Устанавливает кодировку страницы на UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Обеспечивает адаптивность страницы на разных устройствах -->
+    <title>Authentication Form</title> <!-- Заголовок страницы -->
+    <link rel="stylesheet" href="authentication.css"> <!-- Подключает внешний CSS файл для стилизации -->
+</head>
+<body>
+<div class="container"> <!-- Основной контейнер для центрирования содержимого на странице -->
+    <div class="wrapper"> <!-- Внутренний контейнер для оформления формы -->
+        <div class="title"><span>Authentication Form</span></div> <!-- Заголовок формы регистрации -->
+        <form id="authenticationForm"> <!-- Форма с идентификатором "authenticationForm" -->
+            <div class="row"> <!-- Контейнер для поля ввода электронной почты -->
+                <label for="email"></label><input type="email" id="email" name="email" placeholder="Email" required> <!-- Поле ввода для электронной почты -->
+            </div>
+            <div class="row"> <!-- Контейнер для поля ввода пароля -->
+                <label for="password"></label><input type="password" id="password" name="password" placeholder="Password" required> <!-- Поле ввода для пароля -->
+            </div>
+            <div class="row button"> <!-- Контейнер для кнопки отправки формы -->
+                <input type="submit" value="Log in"> <!-- Кнопка отправки формы -->
+            </div>
+            <div id="authenticationResponse" class="signup-link"></div> <!-- Контейнер для отображения ответа сервера после отправки формы -->
+        </form>
+    </div>
+</div>
+
+<script src="authentication.js"></script> <!-- Подключение JavaScript файла -->
+</body>
+</html>
