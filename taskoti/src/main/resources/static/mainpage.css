@@ -1,0 +1,164 @@
+/* Сброс всех стандартных отступов и полей для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Стиль для всего документа */
+body {
+    background: #fff;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* Стиль для выделенного текста */
+::selection {
+    background: rgba(102, 252, 241, 0.3);
+}
+
+/* Оформление шапки страницы */
+header {
+    background: #fff;
+    color: #000;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стиль для навигационного меню в шапке */
+header nav {
+    margin-left: 7rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+}
+
+.nav-left a, .nav-right a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background: #AFEEEE;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+    background: #4d9d9a;
+}
+
+/* Оформление главного блока */
+.hero {
+    background: #f4f4f4;
+    color: #000;
+    padding: 4rem 2rem;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0.5px solid #ddd;
+}
+
+.hero h1 {
+    margin-left: 7rem;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.hero p {
+    margin-left: 7rem;
+    font-size: 1.5rem;
+}
+
+/* Оформление блока поиска внутри hero */
+.search {
+    margin-left: 7rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.search label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.search input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #f4f4f4;
+    color: #000;
+}
+
+.search button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #AFEEEE;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search button:hover {
+    background: #4d9d9a;
+}
+
+/* Стили для категорий */
+.categories {
+    text-align: center;
+    padding: 2rem;
+}
+
+.categories h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-column a {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+.grid-column a i {
+    width: 1.5rem; /* Ширина для выравнивания иконок */
+    text-align: center;
+    margin-right: 0.5rem;
+}
+
+.grid-column a:hover {
+    text-decoration: underline;
+}

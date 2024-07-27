@@ -9,7 +9,7 @@
 <body>
 <div class="container"> <!-- Основной контейнер для центрирования содержимого на странице -->
     <div class="wrapper"> <!-- Внутренний контейнер для оформления формы -->
-        <div class="title"><span>Register Form</span></div> <!-- Заголовок формы регистрации -->
+        <div class="title"><span>Registration Form</span></div> <!-- Заголовок формы регистрации -->
         <form id="registerForm"> <!-- Форма с идентификатором "registerForm" -->
             <div class="row"> <!-- Контейнер для поля ввода полного имени -->
                 <label for="fullName"></label><input type="text" id="fullName" name="fullName" placeholder="Full Name" required> <!-- Поле ввода для полного имени -->
@@ -25,12 +25,13 @@
             </div>
             <div id="registerResponse" class="signup-link"></div> <!-- Контейнер для отображения ответа сервера после отправки формы -->
         </form>
+        <div class="login-link">
+            <p>Уже зарегистрированы? </p>
+                <a href="authentication.html">Войти</a>
+        </div>
     </div>
 </div>
 
 <script src="register.js"></script>
 </body>
 </html>
-
-
-

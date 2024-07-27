@@ -28,6 +28,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(rQ -> {
             rQ.requestMatchers("/api/v1/auth/**").permitAll();// разрешает доступ без аутентификации для URL
             rQ.requestMatchers("/register.html", "/authentication.html",
+                    "/mainpage.html", "/mainpage.css",
                     "/authentication.css","/register.css",
                     "/register.js", "/authentication.js").permitAll();
             rQ.requestMatchers("/api/search/", "/api/profile/", "/signout/").authenticated();//требует аутентификации для URL,
