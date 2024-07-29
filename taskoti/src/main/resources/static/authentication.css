@@ -133,3 +133,9 @@ form .button input:hover {
 .login-link a:hover {
     text-decoration: underline; /* Подчеркивание ссылки при наведении */
 }
+.error-message {
+    color: red; /* Устанавливает красный цвет текста */
+    font-size: 12px; /* Устанавливает уменьшенный размер шрифта */
+}
+
+

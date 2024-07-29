@@ -16,12 +16,22 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(data)
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errorResponse => {
+                        // Отображаем сообщение об ошибке из JSON
+                        throw new Error(errorResponse.message);
+                    });
+                }
+                return response.json();
+            })
             .then(result => {
                 document.getElementById('registerResponse').innerText = 'Registration successful!';
+                document.getElementById('registerResponse').className = ''; // Сброс класса для успешного сообщения
             })
             .catch(error => {
-                document.getElementById('registerResponse').innerText = 'Registration failed!';
+                document.getElementById('registerResponse').innerText = `Registration failed: ${error.message}`;
+                document.getElementById('registerResponse').className = 'error-message'; // Применение класса ошибки
             });
     });
 });

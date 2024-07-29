@@ -12,18 +12,18 @@
         <div class="title"><span>Registration Form</span></div> <!-- Заголовок формы регистрации -->
         <form id="registerForm"> <!-- Форма с идентификатором "registerForm" -->
             <div class="row"> <!-- Контейнер для поля ввода полного имени -->
-                <label for="fullName"></label><input type="text" id="fullName" name="fullName" placeholder="Full Name" required> <!-- Поле ввода для полного имени -->
+                <label for="fullName"></label><input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
             </div>
             <div class="row"> <!-- Контейнер для поля ввода электронной почты -->
-                <label for="email"></label><input type="email" id="email" name="email" placeholder="Email" required> <!-- Поле ввода для электронной почты -->
+                <label for="email"></label><input type="email" id="email" name="email" placeholder="Email" required>
             </div>
             <div class="row"> <!-- Контейнер для поля ввода пароля -->
-                <label for="password"></label><input type="password" id="password" name="password" placeholder="Password" required> <!-- Поле ввода для пароля -->
+                <label for="password"></label><input type="password" id="password" name="password" placeholder="Password" required>
             </div>
             <div class="row button"> <!-- Контейнер для кнопки отправки формы -->
                 <input type="submit" value="Register"> <!-- Кнопка отправки формы -->
             </div>
-            <div id="registerResponse" class="signup-link"></div> <!-- Контейнер для отображения ответа сервера после отправки формы -->
+            <div id="registerResponse" class="error-message"></div> <!-- Контейнер для отображения ответа сервера после отправки формы -->
         </form>
         <div class="login-link">
             <p>Уже зарегистрированы? </p>

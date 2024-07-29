@@ -19,6 +19,10 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) throws Exception {
+        if (repository.existsByEmail(request.getEmail())) {
+            throw new EmailAlreadyExistsException(request.getEmail());
+        }
+
         var user = User.builder()
                 .fullName(request.getFullName())
                 .email(request.getEmail())

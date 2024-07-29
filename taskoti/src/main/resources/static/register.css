@@ -133,3 +133,8 @@ form .button input:hover {
 .login-link a:hover {
     text-decoration: underline; /* Подчеркивание ссылки при наведении */
 }
+.error-message {
+    color: red; /* Цвет текста ошибки */
+    font-size: 0.8em; /* Размер шрифта ошибки */
+    margin-top: 10px; /* Отступ сверху (опционально) */
+}

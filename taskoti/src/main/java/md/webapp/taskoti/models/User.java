@@ -18,13 +18,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
-
+@Entity
 @Data//Генерирует геттеры и сеттеры для всех полей, а также методы equals,
 // hashCode, toString и конструктор для всех полей.
 @Builder//Генерирует шаблонный класс Builder для удобного создания экземпляров класса.
 @NoArgsConstructor//генерирует конструктор без аргументов
 @AllArgsConstructor//генерирует конструктор со всеми аргументов
-@Entity
+
 @Table(name = "app_users")
 public class User implements UserDetails {
     //некоторые методы UserDetails не просит переопределять из-за идентичного названия полей
@@ -34,29 +34,36 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+
     @Column(name = "password")
     private String password;
+
+
     @Column(name = "email")
-//    @NotEmpty(message = "Запишите адрес электронной почты")
-//    @Email(message = "Адрес электонной почты не валиден")
-//    @Size(max = 35, message = "Почта должна быть менее 35 символов")
+
     private String email;
 
-//    @Column(name = "full_name")
-//    @NotEmpty(message = "name shouldn't be empty")
-//    @Pattern(regexp = "[A-Z]\\w+ [A-Z]\\w+", message = "Write your name in format: Name Surname")
+
+    @Column(name = "full_name")
     private String fullName;
+
 
     @Column(name = "bio")
     @Size(max = 200)
     private String bio;
+
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+
     @Column(name = "profile_picture")
     private String profilePicture;
+
 
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
