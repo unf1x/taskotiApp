@@ -15,14 +15,14 @@ body {
 
 /* Стиль для выделенного текста */
 ::selection {
-    background: rgba(102, 252, 241, 0.3);
+    background: rgba(138, 43, 226, 0.3); /* Новый светло-фиолетовый */
 }
 
 /* Оформление шапки страницы */
 header {
     background: #fff;
     color: #000;
-    padding: 1rem 2rem;
+    padding: 0.3rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,22 +36,28 @@ header nav {
     justify-content: space-between;
 }
 
+/* Стили для блоков навигации */
 .nav-left, .nav-right {
     display: flex;
+    align-items: center; /* Центрирует элементы по вертикали */
 }
 
+/* Стили для кнопок */
 .nav-left a, .nav-right a {
     color: #000;
     text-decoration: none;
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
-    background: #AFEEEE;
+    background: white;
     border-radius: 4px;
-    transition: background 0.3s ease;
+    transition: color 0.3s ease;
+    display: flex; /* Устанавливает flex-контейнер для кнопок */
+    align-items: center; /* Выравнивает текст по вертикали */
 }
 
+/* Стили для кнопок при наведении */
 .nav-left a:hover, .nav-right a:hover {
-    background: #4d9d9a;
+    color: #9370DB; /* Основной фиолетовый */
 }
 
 /* Оформление главного блока */
@@ -112,7 +118,7 @@ header nav {
     margin-top: 1rem;
     border: none;
     border-radius: 4px;
-    background: #AFEEEE;
+    background: #9370DB; /* Основной фиолетовый */
     color: #000;
     font-size: 1rem;
     cursor: pointer;
@@ -120,7 +126,7 @@ header nav {
 }
 
 .search button:hover {
-    background: #4d9d9a;
+    background: hsl(260, 60%, 80%);
 }
 
 /* Стили для категорий */
@@ -148,9 +154,11 @@ header nav {
 .grid-column a {
     display: flex;
     align-items: center;
-    color: #000;
+    color: #000; /* Чёрный текст */
     text-decoration: none;
     padding: 0.5rem 0;
+    background: #fff; /* Белый фон */
+    transition: color 0.3s ease; /* Плавное изменение цвета текста */
 }
 
 .grid-column a i {
@@ -160,5 +168,42 @@ header nav {
 }
 
 .grid-column a:hover {
-    text-decoration: underline;
+    color: #8A2BE2; /* Новый светло-фиолетовый текст при наведении */
+    background: #fff; /* Белый фон при наведении */
+    text-decoration: none; /* Убирает подчеркивание текста при наведении */
+}
+
+/* Добавьте стили для выпадающего списка */
+.dropdown {
+    position: relative; /* Устанавливает относительное позиционирование для правильного позиционирования меню */
+    display: inline-block; /* Позволяет блочному элементу находиться в одной строке с другими элементами */
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: block;
+    transition: color 0.3s ease; /* Плавное изменение цвета текста */
+}
+
+.dropdown-menu a:hover {
+    color: #8A2BE2; /* Новый светло-фиолетовый цвет текста при наведении */
+    background-color: #fff; /* Белый фон при наведении */
 }

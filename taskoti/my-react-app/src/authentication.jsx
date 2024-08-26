@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './authentication.css';
-import { handleAuthenticationSubmit } from './authentication.js'; // Импорт логики из authentication.js
+import { handleAuthenticationSubmit } from './authentication.js';
+import Logo from "./logo.jsx"; // Импорт логики из authentication.js
 
 function Authentication() {
     const [message, setMessage] = useState('');
 
     return (
         <div className="container">
+            <Logo />
             <div className="wrapper">
                 <div className="title">
                     <span>Authentication Form</span>

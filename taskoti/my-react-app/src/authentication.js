@@ -21,10 +21,17 @@ export function handleAuthenticationSubmit(event, setMessage) {
             return response.json();
         })
         .then(result => {
+            // Сохраняем токен, userId и fullName в localStorage
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('userId', result.userId);
+            localStorage.setItem('fullName', result.fullName); // Сохраняем полное имя
+
+            // Отображаем сообщение об успешной аутентификации
             setMessage('Authentication successful!');
             document.getElementById('authenticationResponse').className = ''; // Сброс класса для успешного сообщения
         })
         .catch(error => {
+            // Обрабатываем ошибки
             setMessage(error.message);
             document.getElementById('authenticationResponse').className = 'error-message'; // Применение класса ошибки
         });

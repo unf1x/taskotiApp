@@ -24,6 +24,10 @@ export const handleSubmit = (event, setResponseMessage, setIsError) => {
             return response.json();
         })
         .then(result => {
+            localStorage.setItem('token', result.token);
+            localStorage.setItem('fullName', result.fullName)
+            localStorage.setItem('userId', result.userId);
+            console.log(result.id+"SUKA")
             setResponseMessage('Registration successful!');
             setIsError(false);
         })

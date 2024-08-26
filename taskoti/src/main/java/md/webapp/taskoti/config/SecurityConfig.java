@@ -26,11 +26,9 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable);//защиту CSRF (подделка межсайтовых запросов) для
         // конфигурации http. AbstractHttpConfigurer::disable — это ссылка на метод, отключающий CSRF.
         http.authorizeHttpRequests(rQ -> {
+
+            rQ.requestMatchers("/api/v1/user/**").permitAll();
             rQ.requestMatchers("/api/v1/auth/**").permitAll();// разрешает доступ без аутентификации для URL
-            rQ.requestMatchers("/register.html", "/authentication.html",
-                    "/mainpage.html", "/mainpage.css",
-                    "/authentication.css","/register.css",
-                    "/register.js", "/authentication.js").permitAll();
             rQ.requestMatchers("/api/search/", "/api/profile/", "/signout/").authenticated();//требует аутентификации для URL,
         });
         http.sessionManagement(sessionAuthenticationStrategy ->

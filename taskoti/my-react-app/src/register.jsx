@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './register.css'; // Подключение CSS файла
-import { handleSubmit } from './register.js'; // Импорт логики из register.js
+import { handleSubmit } from './register.js';
+import Logo from "./logo.jsx"; // Импорт логики из register.js
 
 function Register() {
     const [responseMessage, setResponseMessage] = useState('');
@@ -9,6 +10,7 @@ function Register() {
 
     return (
         <div className="container">
+            <Logo />
             <div className="wrapper">
                 <div className="title">
                     <span>Registration Form</span>

@@ -1,21 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './mainpage.css'; // Подключение CSS файла
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShippingFast, faTools, faTruck, faBroom, faLaptop, faCamera, faCode, faBullhorn, faPaintBrush, faHeadset, faMobileAlt, faSpa, faGavel, faCar, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
+import Logo from "./logo.jsx";
 
 function MainPage() {
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+    // Получаем токен и данные пользователя из localStorage
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    const fullName = localStorage.getItem('fullName');
+
+    const handleMouseEnter = () => {
+        setDropdownVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+        setDropdownVisible(false);
+    };
+
     return (
         <div>
             <header>
+                <Logo />
                 <nav>
                     <div className="nav-left">
-                        <Link to="/create-task" className="btn">Create Task</Link>
+                        <div className="dropdown" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            <Link to="#" className="btn">Create Task</Link>
+                            {isDropdownVisible && (
+                                <div className="dropdown-menu">
+                                    <Link to="#"> Courier Services</Link>
+                                    <Link to="#"> Repair and Construction</Link>
+                                    <Link to="#"> Cargo Transportation</Link>
+                                    <Link to="#"> Cleaning and Household Help</Link>
+                                    <Link to="#"> Computer Help</Link>
+                                    <Link to="#"> Photo, Video, and Audio</Link>
+                                    <Link to="#"> Software Development</Link>
+                                    <Link to="#"> Installation and Repair of Equipment</Link>
+                                    <Link to="#"> Events and Promotions</Link>
+                                    <Link to="#"> Design</Link>
+                                    <Link to="#"> Virtual Assistant</Link>
+                                    <Link to="#"> Repair of Digital Equipment</Link>
+                                    <Link to="#"> Beauty and Health</Link>
+                                    <Link to="#"> Legal and Accounting Help</Link>
+                                    <Link to="#"> Vehicle Repair</Link>
+                                    <Link to="#"> Tutors and Education</Link>
+                                </div>
+                            )}
+                        </div>
                         <Link to="/find-tasks" className="btn">Find Tasks</Link>
                     </div>
                     <div className="nav-right">
-                        <Link to="/register" className="btn">Register</Link>
-                        <Link to="/authentication" className="btn">Login</Link>
+                        {/* Если пользователь не авторизован, показываем Register и Login */}
+                        {!token ? (
+                            <>
+                                <Link to="/register" className="btn">Register</Link>
+                                <Link to="/authentication" className="btn">Login</Link>
+                            </>
+                        ) : (
+                            // Если авторизован, показываем приветствие и ссылку на профиль
+                            <>
+                                <span className="welcome-message">Welcome, {fullName || 'User'}</span>
+                                <Link to={`/profile/${userId}`} className="btn">Profile</Link>
+                            </>
+                        )}
                     </div>
                 </nav>
             </header>
