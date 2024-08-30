@@ -4,6 +4,7 @@ import Register from './register.jsx';
 import Authentication from './authentication.jsx';
 import MainPage from "./mainpage.jsx";
 import Profile from "./Profile.jsx";
+import CreateTaskForm from './CreateTaskForm';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/authentication" element={<Authentication />} />
                 <Route path="/profile/:userId" element={<Profile />} />
+                <Route path="/create-task" element={<CreateTaskForm />} />
             </Routes>
         </Router>
     );

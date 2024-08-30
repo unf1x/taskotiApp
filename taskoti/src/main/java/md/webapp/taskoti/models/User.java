@@ -11,6 +11,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,7 +26,8 @@ import java.util.List;
 @Builder//Генерирует шаблонный класс Builder для удобного создания экземпляров класса.
 @NoArgsConstructor//генерирует конструктор без аргументов
 @AllArgsConstructor//генерирует конструктор со всеми аргументов
-
+@EntityListeners(AuditingEntityListener.class)//Это слушатель, который автоматически обновляет поля,
+// аннотированные как @CreatedDate и @LastModifiedDate, при создании и обновлении сущностей.
 @Table(name = "app_users")
 public class User implements UserDetails {
     //некоторые методы UserDetails не просит переопределять из-за идентичного названия полей
@@ -49,11 +52,11 @@ public class User implements UserDetails {
 
 
     @Column(name = "bio")
-    @Size(max = 200)
+    @Size(min = 10, max = 200)//НЕ РАБОТАЕТ НАДО ФИКС //TODO
     private String bio;
 
-
-    @Column(name = "created_at")
+    @CreatedDate
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
 

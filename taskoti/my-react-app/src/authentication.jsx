@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Импортируйте useNavigate
 import './authentication.css';
 import { handleAuthenticationSubmit } from './authentication.js';
 import Logo from "./logo.jsx"; // Импорт логики из authentication.js
 
 function Authentication() {
     const [message, setMessage] = useState('');
+    const navigate = useNavigate(); // Получить функцию навигации
+
+    const handleSubmit = (event) => {
+        handleAuthenticationSubmit(event, setMessage, navigate); // Передайте navigate
+    };
 
     return (
         <div className="container">
@@ -14,7 +19,7 @@ function Authentication() {
                 <div className="title">
                     <span>Authentication Form</span>
                 </div>
-                <form id="authenticationForm" onSubmit={(event) => handleAuthenticationSubmit(event, setMessage)}>
+                <form id="authenticationForm" onSubmit={handleSubmit}>
                     <div className="row">
                         <label htmlFor="email"></label>
                         <input type="email" id="email" name="email" placeholder="Email" required />

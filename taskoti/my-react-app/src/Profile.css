@@ -2,9 +2,10 @@
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background: #f9f9f9;
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .profile-header {
@@ -12,9 +13,9 @@
     margin-bottom: 20px;
 }
 
-.profile-header h1 {
+.profile-header h2 {
     margin: 0;
-    color: #333;
+    color: #000;
 }
 
 .profile-picture {
@@ -28,6 +29,7 @@
 .profile-details {
     font-size: 16px;
     line-height: 1.6;
+    color: #000;
 }
 
 .profile-details p {
@@ -37,3 +39,98 @@
 .profile-details strong {
     color: #555;
 }
+
+.bio-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #9370DB;
+    background: #f9f9f9;
+    color: #000;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.bio-input:focus {
+    border-color: #8A2BE2;
+}
+
+.profile-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.save-btn, .cancel-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    color: black;
+    transition: background 0.3s ease;
+}
+
+.save-btn {
+    background: #9370DB;
+}
+
+.save-btn:hover {
+    background: hsl(260, 60%, 80%);
+}
+
+.cancel-btn {
+    background: #ccc;
+}
+
+.cancel-btn:hover {
+    background: #aaa;
+}
+
+.logout-button {
+    padding: 0.5rem 1rem;
+    background: #9370DB;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: flex-end;
+}
+
+.logout-button:hover {
+    background: hsl(260, 60%, 80%);
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background: #fff;
+}
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d4edda; /* Мягкий зеленый цвет */
+    color: #155724; /* Тёмно-зеленый текст */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 1s ease-out; /* Плавное исчезание */
+}
+
+.success-message.hidden {
+    opacity: 0;
+}
+

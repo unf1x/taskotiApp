@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './register.css'; // Подключение CSS файла
-import { handleSubmit } from './register.js';
-import Logo from "./logo.jsx"; // Импорт логики из register.js
+import { handleSubmit } from './register.js'; // Импорт логики из register.js
+import Logo from "./logo.jsx";
 
 function Register() {
     const [responseMessage, setResponseMessage] = useState('');
     const [isError, setIsError] = useState(false);
+    const navigate = useNavigate(); // Получить функцию навигации
+
+    // Обработка отправки формы
+    const handleFormSubmit = (event) => {
+        handleSubmit(event, setResponseMessage, setIsError, navigate); // Передайте navigate
+    };
 
     return (
         <div className="container">
@@ -15,7 +21,7 @@ function Register() {
                 <div className="title">
                     <span>Registration Form</span>
                 </div>
-                <form id="registerForm" onSubmit={(event) => handleSubmit(event, setResponseMessage, setIsError)}>
+                <form id="registerForm" onSubmit={handleFormSubmit}>
                     <div className="row">
                         <label htmlFor="fullName"></label>
                         <input type="text" id="fullName" name="fullName" placeholder="Full Name" required />
@@ -37,7 +43,7 @@ function Register() {
                 </form>
                 <div className="login-link">
                     <p>Уже зарегистрированы? </p>
-                    <Link to="/authentication">Войти</Link> {}
+                    <Link to="/authentication">Войти</Link> {/* Использование Link для навигации */}
                 </div>
             </div>
         </div>

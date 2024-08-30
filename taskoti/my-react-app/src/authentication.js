@@ -1,4 +1,4 @@
-export function handleAuthenticationSubmit(event, setMessage) {
+export function handleAuthenticationSubmit(event, setMessage, navigate) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -24,11 +24,14 @@ export function handleAuthenticationSubmit(event, setMessage) {
             // Сохраняем токен, userId и fullName в localStorage
             localStorage.setItem('token', result.token);
             localStorage.setItem('userId', result.userId);
-            localStorage.setItem('fullName', result.fullName); // Сохраняем полное имя
+            localStorage.setItem('fullName', result.fullName);
 
             // Отображаем сообщение об успешной аутентификации
             setMessage('Authentication successful!');
             document.getElementById('authenticationResponse').className = ''; // Сброс класса для успешного сообщения
+
+            // Перенаправляем на главную страницу после успешной аутентификации
+            navigate('/');
         })
         .catch(error => {
             // Обрабатываем ошибки
