@@ -16,7 +16,7 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    @PutMapping("create")
+    @PostMapping("create")
     public ResponseEntity<?> createTask(@RequestBody TaskRequest request) {
         try {
             taskService.createTask(request);

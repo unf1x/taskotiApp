@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './mainpage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShippingFast, faTools, faTruck, faBroom, faLaptop, faCamera, faCode, faBullhorn, faPaintBrush, faHeadset, faMobileAlt, faSpa, faGavel, faCar, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,7 @@ import Logo from "./logo.jsx";
 
 function MainPage() {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const navigate = useNavigate();
 
     const handleMouseEnter = () => {
         setDropdownVisible(true);
@@ -14,6 +15,10 @@ function MainPage() {
 
     const handleMouseLeave = () => {
         setDropdownVisible(false);
+    };
+
+    const handleCategoryClick = (category) => {
+        navigate('/create-task', { state: { category } });
     };
 
     return (
@@ -26,22 +31,22 @@ function MainPage() {
                             <Link to="#" className="btn">Create Task</Link>
                             {isDropdownVisible && (
                                 <div className="dropdown-menu">
-                                    <Link to="/create-task"> Courier Services</Link>
-                                    <Link to="/create-task"> Repair and Construction</Link>
-                                    <Link to="/create-task"> Cargo Transportation</Link>
-                                    <Link to="/create-task"> Cleaning and Household Help</Link>
-                                    <Link to="/create-task"> Computer Help</Link>
-                                    <Link to="/create-task"> Photo, Video, and Audio</Link>
-                                    <Link to="/create-task"> Software Development</Link>
-                                    <Link to="/create-task"> Installation and Repair of Equipment</Link>
-                                    <Link to="/create-task"> Events and Promotions</Link>
-                                    <Link to="/create-task"> Design</Link>
-                                    <Link to="/create-task"> Virtual Assistant</Link>
-                                    <Link to="/create-task"> Repair of Digital Equipment</Link>
-                                    <Link to="/create-task"> Beauty and Health</Link>
-                                    <Link to="/create-task"> Legal and Accounting Help</Link>
-                                    <Link to="/create-task"> Vehicle Repair</Link>
-                                    <Link to="/create-task"> Tutors and Education</Link>
+                                    <button onClick={() => handleCategoryClick('Courier Services')}>Courier Services</button>
+                                    <button onClick={() => handleCategoryClick('Repair and Construction')}>Repair and Construction</button>
+                                    <button onClick={() => handleCategoryClick('Cargo Transportation')}>Cargo Transportation</button>
+                                    <button onClick={() => handleCategoryClick('Cleaning and Household Help')}>Cleaning and Household Help</button>
+                                    <button onClick={() => handleCategoryClick('Computer Help')}>Computer Help</button>
+                                    <button onClick={() => handleCategoryClick('Photo, Video, and Audio')}>Photo, Video, and Audio</button>
+                                    <button onClick={() => handleCategoryClick('Software Development')}>Software Development</button>
+                                    <button onClick={() => handleCategoryClick('Installation and Repair of Equipment')}>Installation and Repair of Equipment</button>
+                                    <button onClick={() => handleCategoryClick('Events and Promotions')}>Events and Promotions</button>
+                                    <button onClick={() => handleCategoryClick('Design')}>Design</button>
+                                    <button onClick={() => handleCategoryClick('Virtual Assistant')}>Virtual Assistant</button>
+                                    <button onClick={() => handleCategoryClick('Repair of Digital Equipment')}>Repair of Digital Equipment</button>
+                                    <button onClick={() => handleCategoryClick('Beauty and Health')}>Beauty and Health</button>
+                                    <button onClick={() => handleCategoryClick('Legal and Accounting Help')}>Legal and Accounting Help</button>
+                                    <button onClick={() => handleCategoryClick('Vehicle Repair')}>Vehicle Repair</button>
+                                    <button onClick={() => handleCategoryClick('Tutors and Education')}>Tutors and Education</button>
                                 </div>
                             )}
                         </div>
@@ -68,26 +73,26 @@ function MainPage() {
                 <h2>Categories</h2>
                 <div className="grid-container">
                     <div className="grid-column">
-                        <Link to="/create-task"><FontAwesomeIcon icon={faShippingFast} /> Courier Services</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faTools} /> Repair and Construction</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faTruck} /> Cargo Transportation</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faBroom} /> Cleaning and Household Help</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faLaptop} /> Computer Help</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faCamera} /> Photo, Video, and Audio</Link>
+                        <button onClick={() => handleCategoryClick('Courier Services')}><FontAwesomeIcon icon={faShippingFast} /> Courier Services</button>
+                        <button onClick={() => handleCategoryClick('Repair and Construction')}><FontAwesomeIcon icon={faTools} /> Repair and Construction</button>
+                        <button onClick={() => handleCategoryClick('Cargo Transportation')}><FontAwesomeIcon icon={faTruck} /> Cargo Transportation</button>
+                        <button onClick={() => handleCategoryClick('Cleaning and Household Help')}><FontAwesomeIcon icon={faBroom} /> Cleaning and Household Help</button>
+                        <button onClick={() => handleCategoryClick('Computer Help')}><FontAwesomeIcon icon={faLaptop} /> Computer Help</button>
+                        <button onClick={() => handleCategoryClick('Photo, Video, and Audio')}><FontAwesomeIcon icon={faCamera} /> Photo, Video, and Audio</button>
                     </div>
                     <div className="grid-column">
-                        <Link to="/create-task"><FontAwesomeIcon icon={faCode} /> Software Development</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faTools} /> Installation and Repair of Equipment</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faBullhorn} /> Events and Promotions</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faPaintBrush} /> Design</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faHeadset} /> Virtual Assistant</Link>
+                        <button onClick={() => handleCategoryClick('Software Development')}><FontAwesomeIcon icon={faCode} /> Software Development</button>
+                        <button onClick={() => handleCategoryClick('Installation and Repair of Equipment')}><FontAwesomeIcon icon={faTools} /> Installation and Repair of Equipment</button>
+                        <button onClick={() => handleCategoryClick('Events and Promotions')}><FontAwesomeIcon icon={faBullhorn} /> Events and Promotions</button>
+                        <button onClick={() => handleCategoryClick('Design')}><FontAwesomeIcon icon={faPaintBrush} /> Design</button>
+                        <button onClick={() => handleCategoryClick('Virtual Assistant')}><FontAwesomeIcon icon={faHeadset} /> Virtual Assistant</button>
                     </div>
                     <div className="grid-column">
-                        <Link to="/create-task"><FontAwesomeIcon icon={faMobileAlt} /> Repair of Digital Equipment</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faSpa} /> Beauty and Health</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faGavel} /> Legal and Accounting Help</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faCar} /> Vehicle Repair</Link>
-                        <Link to="/create-task"><FontAwesomeIcon icon={faChalkboardTeacher} /> Tutors and Education</Link>
+                        <button onClick={() => handleCategoryClick('Repair of Digital Equipment')}><FontAwesomeIcon icon={faMobileAlt} /> Repair of Digital Equipment</button>
+                        <button onClick={() => handleCategoryClick('Beauty and Health')}><FontAwesomeIcon icon={faSpa} /> Beauty and Health</button>
+                        <button onClick={() => handleCategoryClick('Legal and Accounting Help')}><FontAwesomeIcon icon={faGavel} /> Legal and Accounting Help</button>
+                        <button onClick={() => handleCategoryClick('Vehicle Repair')}><FontAwesomeIcon icon={faCar} /> Vehicle Repair</button>
+                        <button onClick={() => handleCategoryClick('Tutors and Education')}><FontAwesomeIcon icon={faChalkboardTeacher} /> Tutors and Education</button>
                     </div>
                 </div>
             </div>

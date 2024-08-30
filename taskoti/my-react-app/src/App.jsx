@@ -8,15 +8,15 @@ import CreateTaskForm from './CreateTaskForm';
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<MainPage />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/authentication" element={<Authentication />} />
-                <Route path="/profile/:userId" element={<Profile />} />
-                <Route path="/create-task" element={<CreateTaskForm />} />
-            </Routes>
-        </Router>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/authentication" element={<Authentication />} />
+                    <Route path="/profile/:userId" element={<Profile />} />
+                    <Route path="/create-task" element={<CreateTaskForm />} />
+                </Routes>
+            </Router>
     );
 }
 

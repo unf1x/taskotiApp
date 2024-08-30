@@ -32,4 +32,7 @@ public class Task {
 
     @Column(name = "budget")
     private Integer budget;
+
+    @Column(name = "category")
+    private String category;
 }

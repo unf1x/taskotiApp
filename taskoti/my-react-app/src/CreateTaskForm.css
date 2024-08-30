@@ -1,3 +1,4 @@
+/* Стили для формы создания задачи */
 .create-task-form {
     max-width: 500px;
     margin: 0 auto;
@@ -26,9 +27,19 @@
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 8px; /* Уменьшен отступ внутри */
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px; /* Уменьшен отступ внутри */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px; /* Уменьшен размер шрифта */
+    color: #333;
 }
 
 .budget-slider {
@@ -120,5 +131,3 @@
     top: 10px; /* Отступ сверху */
     left: 10px; /* Отступ слева */
 }
-
-

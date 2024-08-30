@@ -10,5 +10,6 @@ public class TaskRequest {
     private String description;
     private LocalDate deadline;
     private Integer budget;
+    private String category;
 
 }

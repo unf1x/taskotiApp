@@ -16,7 +16,9 @@ public class TaskService {
                 .title(request.getTitle())
                 .description(request.getDescription())
                 .deadline(request.getDeadline())
-                .budget(request.getBudget()).build();
+                .budget(request.getBudget())
+                .category(request.getCategory())
+                .build();
         taskRepository.save(task);
     }
 }

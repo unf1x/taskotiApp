@@ -28,6 +28,15 @@ header {
     align-items: center;
 }
 
+.category-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-item:hover {
+    background-color: #f0f0f0;
+}
+
 /* Стиль для навигационного меню в шапке */
 header nav {
     margin-left: 7rem;
@@ -151,26 +160,28 @@ header nav {
     flex-direction: column;
 }
 
-.grid-column a {
-    display: flex;
-    align-items: center;
+.grid-column button {
     color: #000; /* Чёрный текст */
     text-decoration: none;
     padding: 0.5rem 0;
     background: #fff; /* Белый фон */
-    transition: color 0.3s ease; /* Плавное изменение цвета текста */
+    border: none; /* Убираем границу по умолчанию */
+    border-radius: 4px; /* Скругляем углы */
+    transition: color 0.3s ease, background 0.3s ease; /* Плавное изменение цвета текста и фона */
+    display: flex; /* Выравнивание текста и иконки */
+    align-items: center; /* Центрируем элементы по вертикали */
+    cursor: pointer; /* Курсор в виде руки при наведении */
 }
 
-.grid-column a i {
+.grid-column button i {
     width: 1.5rem; /* Ширина для выравнивания иконок */
     text-align: center;
     margin-right: 0.5rem;
 }
 
-.grid-column a:hover {
+.grid-column button:hover {
     color: #8A2BE2; /* Новый светло-фиолетовый текст при наведении */
-    background: #fff; /* Белый фон при наведении */
-    text-decoration: none; /* Убирает подчеркивание текста при наведении */
+    background: #f0f0f0; /* Легкий серый фон при наведении */
 }
 
 /* Добавьте стили для выпадающего списка */
@@ -192,18 +203,25 @@ header nav {
     min-width: 200px;
     padding: 10px 0;
     white-space: nowrap;
+    display: none; /* По умолчанию скрываем меню */
 }
 
-.dropdown-menu a {
+.dropdown:hover .dropdown-menu {
+    display: flex; /* Показываем меню при наведении на контейнер */
+}
+
+.dropdown-menu button {
     padding: 10px 20px;
     text-decoration: none;
     color: black;
     font-size: 14px;
-    display: block;
-    transition: color 0.3s ease; /* Плавное изменение цвета текста */
+    background: white; /* Белый фон */
+    border: none; /* Убираем границу по умолчанию */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    transition: color 0.3s ease, background 0.3s ease; /* Плавное изменение цвета текста и фона */
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu button:hover {
     color: #8A2BE2; /* Новый светло-фиолетовый цвет текста при наведении */
-    background-color: #fff; /* Белый фон при наведении */
+    background-color: #f0f0f0; /* Легкий серый фон при наведении */
 }
