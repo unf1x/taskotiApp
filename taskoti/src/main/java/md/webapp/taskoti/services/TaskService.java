@@ -7,6 +7,8 @@ import md.webapp.taskoti.models.Task;
 import md.webapp.taskoti.repositories.TaskRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class TaskService {
@@ -20,5 +22,10 @@ public class TaskService {
                 .category(request.getCategory())
                 .build();
         taskRepository.save(task);
+    }
+
+    //возвращает список всех задач из базы данных,
+    public List<Task> allTasks(){
+        return taskRepository.findAll();
     }
 }

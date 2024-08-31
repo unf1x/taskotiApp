@@ -141,18 +141,18 @@ header nav {
 /* Стили для категорий */
 .categories {
     text-align: center;
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 .categories h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    font-size: 2.2rem;
 }
 
 .grid-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .grid-column {
@@ -163,7 +163,7 @@ header nav {
 .grid-column button {
     color: #000; /* Чёрный текст */
     text-decoration: none;
-    padding: 0.5rem 0;
+    padding: 0.6rem 1rem;
     background: #fff; /* Белый фон */
     border: none; /* Убираем границу по умолчанию */
     border-radius: 4px; /* Скругляем углы */
@@ -174,14 +174,17 @@ header nav {
 }
 
 .grid-column button i {
-    width: 1.5rem; /* Ширина для выравнивания иконок */
+    width: 1.7rem; /* Ширина для выравнивания иконок */
     text-align: center;
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
 }
 
 .grid-column button:hover {
     color: #8A2BE2; /* Новый светло-фиолетовый текст при наведении */
     background: #f0f0f0; /* Легкий серый фон при наведении */
+}
+.grid-column button svg {
+    margin-right: 10px; /* Отступ между иконкой и текстом */
 }
 
 /* Добавьте стили для выпадающего списка */
@@ -225,3 +228,34 @@ header nav {
     color: #8A2BE2; /* Новый светло-фиолетовый цвет текста при наведении */
     background-color: #f0f0f0; /* Легкий серый фон при наведении */
 }
+
+.search {
+    position: relative; /* Для позиционирования подсказок относительно блока поиска */
+}
+
+.suggestions-list {
+    position: absolute;
+    top: 100%; /* Снизу от блока поиска */
+    left: 0;
+    width: 100%; /* Ширина подсказок равна ширине блока поиска */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+

@@ -96,9 +96,10 @@ form .row input::placeholder {
     cursor: pointer; /* Изменяет вид курсора на указатель при наведении на кнопку */
 }
 
+
 /* Стиль для кнопки отправки формы при наведении */
 form .button input:hover {
-    background: #7a5b9f;
+    background: hsl(260, 60%, 80%) !important;
 }
 
 /* Стиль для ссылки на регистрацию */
@@ -139,3 +140,4 @@ form .button input:hover {
     font-size: 0.8em; /* Размер шрифта ошибки */
     margin-top: 10px; /* Отступ сверху (опционально) */
 }
+

@@ -42,8 +42,8 @@ function Register() {
                     </div>
                 </form>
                 <div className="login-link">
-                    <p>Уже зарегистрированы? </p>
-                    <Link to="/authentication">Войти</Link> {/* Использование Link для навигации */}
+                    <p>Already have an account?</p>
+                    <Link to="/authentication">Log in</Link> {/* Использование Link для навигации */}
                 </div>
             </div>
         </div>

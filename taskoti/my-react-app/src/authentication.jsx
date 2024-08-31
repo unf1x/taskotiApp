@@ -34,8 +34,8 @@ function Authentication() {
                     <div id="authenticationResponse" className="error-message">{message}</div>
                 </form>
                 <div className="login-link">
-                    <p>Нет аккаунта? </p>
-                    <Link to="/register">Создать аккаунт</Link> {/* Использование Link для навигации */}
+                    <p>Don't have an account?</p>
+                    <Link to="/register">Create account</Link> {/* Использование Link для навигации */}
                 </div>
             </div>
         </div>

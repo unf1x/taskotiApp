@@ -5,7 +5,7 @@ import Logo from './logo'; // Импорт логотипа
 
 function CreateTaskForm() {
     const location = useLocation();
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState(location.state?.title || '');
     const [description, setDescription] = useState('');
     const [deadline, setDeadline] = useState('');
     const [budget, setBudget] = useState(1000); // Верхняя граница бюджета
