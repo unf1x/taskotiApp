@@ -1,4 +1,4 @@
-package md.webapp.taskoti.models;
+package md.webapp.taskoti.entities;
 
 public enum Role {
     USER,

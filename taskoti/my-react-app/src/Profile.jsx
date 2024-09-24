@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './Profile.css';
+import './css/Profile.css';
 import Logo from "./logo.jsx";
 
 function Profile() {

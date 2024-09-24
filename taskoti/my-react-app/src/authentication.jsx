@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Импортируйте useNavigate
-import './authentication.css';
+import './css/authentication.css';
 import { handleAuthenticationSubmit } from './authentication.js';
 import Logo from "./logo.jsx"; // Импорт логики из authentication.js
 

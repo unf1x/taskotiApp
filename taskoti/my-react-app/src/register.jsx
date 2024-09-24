@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './register.css'; // Подключение CSS файла
+import './css/register.css'; // Подключение CSS файла
 import { handleSubmit } from './register.js'; // Импорт логики из register.js
 import Logo from "./logo.jsx";
 

@@ -1,8 +1,12 @@
-package md.webapp.taskoti.auth;
+package md.webapp.taskoti.services;
 
 import lombok.RequiredArgsConstructor;
-import md.webapp.taskoti.models.Role;
-import md.webapp.taskoti.models.User;
+import md.webapp.taskoti.auth.AuthenticationRequest;
+import md.webapp.taskoti.auth.AuthenticationResponse;
+import md.webapp.taskoti.auth.RegisterRequest;
+import md.webapp.taskoti.entities.Role;
+import md.webapp.taskoti.entities.UserEntity;
+import md.webapp.taskoti.exceptions.EmailAlreadyExistsException;
 import md.webapp.taskoti.repositories.UserRepository;
 import md.webapp.taskoti.services.JwtService;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +27,7 @@ public class AuthenticationService {
             throw new EmailAlreadyExistsException(request.getEmail());
         }
 
-        var user = User.builder()
+        var user = UserEntity.builder()
                 .fullName(request.getFullName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))//encode before saving to DB

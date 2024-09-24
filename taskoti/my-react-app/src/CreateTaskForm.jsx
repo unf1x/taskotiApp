@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import './CreateTaskForm.css'; // Подключение CSS файла
+import './css/CreateTaskForm.css'; // Подключение CSS файла
 import Logo from './logo'; // Импорт логотипа
 
 function CreateTaskForm() {

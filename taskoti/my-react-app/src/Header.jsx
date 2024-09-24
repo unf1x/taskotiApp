@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './header.css'; // Импортируйте CSS только здесь
+import './css/header.css'; // Импортируйте CSS только здесь
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShippingFast, faTools, faTruck, faBroom, faLaptop, faCamera, faCode, faBullhorn, faPaintBrush, faHeadset, faMobileAlt, faSpa, faGavel, faCar, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 import Logo from "./logo.jsx";

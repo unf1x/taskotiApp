@@ -3,7 +3,7 @@ package md.webapp.taskoti.services;
 import lombok.RequiredArgsConstructor;
 
 import md.webapp.taskoti.dto.TaskRequest;
-import md.webapp.taskoti.models.Task;
+import md.webapp.taskoti.entities.TaskEntity;
 import md.webapp.taskoti.repositories.TaskRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class TaskService {
     private final TaskRepository taskRepository;
     public void createTask(TaskRequest request){
-        var task = Task.builder()
+        var task = TaskEntity.builder()
                 .title(request.getTitle())
                 .description(request.getDescription())
                 .deadline(request.getDeadline())
@@ -25,7 +25,7 @@ public class TaskService {
     }
 
     //возвращает список всех задач из базы данных,
-    public List<Task> allTasks(){
+    public List<TaskEntity> allTasks(){
         return taskRepository.findAll();
     }
 }

@@ -1,7 +1,13 @@
-package md.webapp.taskoti.auth;
+package md.webapp.taskoti.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import md.webapp.taskoti.auth.AuthenticationRequest;
+import md.webapp.taskoti.auth.AuthenticationResponse;
+import md.webapp.taskoti.auth.ErrorResponse;
+import md.webapp.taskoti.auth.RegisterRequest;
+import md.webapp.taskoti.exceptions.EmailAlreadyExistsException;
+import md.webapp.taskoti.services.AuthenticationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;

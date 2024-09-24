@@ -1,4 +1,4 @@
-package md.webapp.taskoti.auth;
+package md.webapp.taskoti.exceptions;
 
 public class EmailAlreadyExistsException extends RuntimeException {
     public EmailAlreadyExistsException(String email) {

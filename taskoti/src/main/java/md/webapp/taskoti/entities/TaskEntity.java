@@ -1,38 +1,37 @@
-package md.webapp.taskoti.models;
+package md.webapp.taskoti.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
 @Entity
-@Data//Генерирует геттеры и сеттеры для всех полей, а также методы equals,
-// hashCode, toString и конструктор для всех полей.
+@Getter
+@Setter
 @Builder//Генерирует шаблонный класс Builder для удобного создания экземпляров класса.
 @NoArgsConstructor//генерирует конструктор без аргументов
 @AllArgsConstructor//генерирует конструктор со всеми аргументов
 @Table(name = "tasks")
-public class Task {
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class TaskEntity {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    Integer id;
 
     @Column(name = "title")
-    private String title;
+    String title;
 
     @Column(name = "description")
-    private String description;
+    String description;
 
     @Column(name = "deadline")
-    private LocalDate deadline;
+    LocalDate deadline;
 
     @Column(name = "budget")
-    private Integer budget;
+    Integer budget;
 
     @Column(name = "category")
-    private String category;
+    String category;
 }

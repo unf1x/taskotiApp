@@ -1,7 +1,7 @@
 package md.webapp.taskoti.controllers;
 
 import md.webapp.taskoti.dto.TaskRequest;
-import md.webapp.taskoti.models.Task;
+import md.webapp.taskoti.entities.TaskEntity;
 import md.webapp.taskoti.services.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +32,7 @@ public class TaskController {
 
     //возвращаем клиенту список всех задач по /alltasks
     @GetMapping("/alltasks")
-    public List<Task> allTasks() {
+    public List<TaskEntity> allTasks() {
         return taskService.allTasks();
     }
 }
