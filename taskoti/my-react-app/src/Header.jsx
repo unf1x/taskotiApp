@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './css/header.css'; // Импортируйте CSS только здесь
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,7 +7,18 @@ import Logo from "./logo.jsx";
 
 function Header() {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
+    const userId = localStorage.getItem('userId');
+    const fullName = localStorage.getItem('fullName');
+
+    // Проверяем наличие токена при загрузке компонента
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsAuthenticated(true);
+        }
+    }, []);
 
     const handleMouseEnter = () => {
         setDropdownVisible(true);
@@ -19,6 +30,13 @@ function Header() {
 
     const handleCategoryClick = (category) => {
         navigate('/create-task', { state: { category } });
+    };
+
+    // Функция для выхода
+    const handleLogout = () => {
+        localStorage.clear();
+        setIsAuthenticated(false); // Обновляем состояние
+        navigate('/'); // Перенаправление на главную после выхода
     };
 
     return (
@@ -51,8 +69,17 @@ function Header() {
                     <Link to="/all-tasks" className="btn">Find Tasks</Link>
                 </div>
                 <div className="nav-right">
-                    <Link to="/register" className="btn">Register</Link>
-                    <Link to="/authentication" className="btn">Login</Link>
+                    {!isAuthenticated ? (
+                        <>
+                            <Link to="/register" className="btn">Register</Link>
+                            <Link to="/authentication" className="btn">Login</Link>
+                        </>
+                    ) : (
+                        <>
+                            <Link to={`/profile/${userId}`} className="btn">{fullName}</Link>
+                            <button onClick={handleLogout} className="btn">Logout</button>
+                        </>
+                    )}
                 </div>
             </nav>
         </header>

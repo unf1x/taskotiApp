@@ -47,7 +47,6 @@ public class UserEntity implements UserDetails {
 
 
     @Column(name = "bio")
-    @Size(min = 10, max = 200)//НЕ РАБОТАЕТ НАДО ФИКС //TODO
     String bio;
 
     @CreatedDate

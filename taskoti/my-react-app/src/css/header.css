@@ -84,3 +84,21 @@ header a:hover {
     color: #8A2BE2; /* Новый светло-фиолетовый цвет текста при наведении */
     background-color: #f0f0f0; /* Легкий серый фон при наведении */
 }
+/* Стили для кнопки Logout без рамки */
+.nav-right button {
+    color: #000; /* Цвет текста */
+
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 0.5rem 1rem; /* Отступы */
+    background: white; /* Белый фон */
+    border-radius: 4px; /* Закругленные углы */
+    border: none; /* Убираем границу */
+    cursor: pointer; /* Указатель в виде руки при наведении */
+    transition: color 0.3s ease, background 0.3s ease; /* Плавный переход */
+    font-size: 1rem;
+}
+
+.nav-right button:hover {
+    color: #9370DB; /* Основной фиолетовый при наведении */
+    background: #f0f0f0; /* Легкий серый фон при наведении */
+}

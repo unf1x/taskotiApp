@@ -9,10 +9,23 @@ function Profile() {
     const [bio, setBio] = useState('');
     const [showSuccess, setShowSuccess] = useState(false);
     const navigate = useNavigate();
+    const loggedInUserId = localStorage.getItem('userId'); // Получаем ID текущего пользователя
 
     useEffect(() => {
+        // Проверяем аутентификацию и соответствие ID
+        if (!localStorage.getItem('token') || userId !== loggedInUserId) {
+            navigate('/'); // Перенаправляем на главную, если не авторизован или ID не совпадают
+            return;
+        }
+
+        // Загружаем данные пользователя
         fetch(`http://localhost:8080/api/v1/user/${userId}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch user data');
+                }
+                return response.json();
+            })
             .then(data => {
                 setUser(data);
                 setBio(data.bio || '');
@@ -20,7 +33,7 @@ function Profile() {
             .catch(error => {
                 console.error('Error fetching user data:', error);
             });
-    }, [userId]);
+    }, [userId, loggedInUserId, navigate]);
 
     const handleSaveBio = () => {
         fetch(`http://localhost:8080/api/v1/user/${userId}/bio`, {
@@ -65,7 +78,9 @@ function Profile() {
             <div className="profile-container">
                 <div className="profile-header">
                     <h2>Personal Data</h2>
-                    {user.profilePicture && <img src={user.profilePicture} alt={`${user.fullName}'s profile`} className="profile-picture" />}
+                    {user.profilePicture && (
+                        <img src={user.profilePicture} alt={`${user.fullName}'s profile`} className="profile-picture" />
+                    )}
                 </div>
                 <div className="profile-details">
                     <p><strong>Name:</strong> {user.fullName}</p>
