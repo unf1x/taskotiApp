@@ -1,5 +1,6 @@
 package md.webapp.taskoti.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import md.webapp.taskoti.dto.BioUpdateRequest;
 import md.webapp.taskoti.entities.UserEntity;
@@ -14,6 +15,7 @@ public class UserController {
 
     private final UserRepository userRepository;
 
+    @Operation(summary = "Получить пользователя по ID", description = "Возвращает информацию о пользователе")
     @GetMapping("/{userId}")
     public ResponseEntity<UserEntity> getUserById(@PathVariable Integer userId) {
         return userRepository.findById(userId)

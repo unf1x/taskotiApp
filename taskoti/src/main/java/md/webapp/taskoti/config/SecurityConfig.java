@@ -28,6 +28,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(rQ -> {
 
             rQ.requestMatchers("/api/v1/user/**").permitAll();
+            rQ.requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll();
             rQ.requestMatchers("/api/v1/task/**").permitAll();
             rQ.requestMatchers("/api/v1/auth/**").permitAll();// разрешает доступ без аутентификации для URL
             rQ.requestMatchers("/api/search/", "/api/profile/", "/signout/").authenticated();//требует аутентификации для URL,
